@@ -10,8 +10,8 @@ image:
   repository: thethymca/html-tour-site
   # This sets the pull policy for images.
   pullPolicy: IfNotPresent
-  # Overrides the image tag:"1"
-  tag:"1"
+  # Overrides the image tag:"2"
+  tag:"2"
 
 # This is for the secrets for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 imagePullSecrets: []
@@ -100,8 +100,8 @@ autoscaling:
   enabled: false
   minReplicas: 1
   maxReplicas: 100
-  targetCPUUtilizationPercentag:"1"
-  # targetMemoryUtilizationPercentag:"1"
+  targetCPUUtilizationPercentag:"2"
+  # targetMemoryUtilizationPercentag:"2"
 
 # Additional volumes on the output Deployment definition.
 volumes: []
