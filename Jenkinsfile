@@ -20,18 +20,18 @@ pipeline {
                                 git config user.email "harkaur02@gmail.com"
                                 git config user.name "harkaur02"
 
-                                echo "deployment.yaml file before update"
-                                cat k8s/deployment.yaml
+                                echo "values.yaml file before update"
+                                cat values.yaml
 
-                                sed -i 's+thethymca/next-node-js-app:[^ ]*+thethymca/next-node-js-app:"$DOCKERTAG"+g' k8s/deployment.yaml
+                                sed -i 's+thethymca/next-node-js-app:[^ ]*+thethymca/next-node-js-app:"$DOCKERTAG"+g' values.yaml
 
-                                echo "deployment.yaml file after update....."
-                                cat k8s/deployment.yaml
+                                echo "values.yaml file after update....."
+                                cat values.yaml
 
-                                git add k8s/deployment.yaml
+                                git add values.yaml
                                 git commit -m "updated image tag to current $BUILD_NUMBER"
 
-                                git push https://$GIT_USERNAME:$GIT_PASSWORD@github.com/$GIT_USERNAME/$GIT_REPO_NAME HEAD:master
+                                git push https://$GIT_USERNAME:$GIT_PASSWORD@github.com/$GIT_USERNAME/$GIT_REPO_NAME HEAD:main
                             """
                         }
                     //}
