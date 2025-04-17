@@ -23,7 +23,9 @@ pipeline {
                                 cat values.yaml
 
                                 # sed -i 's+thethymca/next-node-js-app:[^ ]*+thethymca/next-node-js-app:"$DOCKERTAG"+g' values.yaml
-                                sed -i 's+tag:[^ ]*+tag:"$DOCKERTAG"+g' values.yaml
+                                sed -i 's+tag:[^ ]*+tag:\"$DOCKERTAG"\+g' values.yaml
+                                # sed -i 's+tag:[^ ]*+tag: \"${DOCKERTAG}\"+g' values.yaml
+
 
 
                                 echo "values.yaml file after update....."
