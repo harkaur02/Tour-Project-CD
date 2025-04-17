@@ -3,13 +3,12 @@ pipeline {
     environment {
         DOCKERTAG = "${BUILD_NUMBER}"
         GIT_USER_NAME ="harkaur02"
-        GIT_REPO_NAME = "https://github.com/harkaur02/Tour-Project.git"
+        GIT_REPO_NAME = "https://github.com/harkaur02/Tour-Project-CD.git"
     }
     stages {
         stage ('Update Deployment Manifest file') {
             steps {
                 script {
-                    //sed -i 's+thethymca/next-node-js-app:*+thethymca/next-node-js-app:'"$DOCKERTAG"'+g'
                     //catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                         withCredentials([usernamePassword(
                             credentialsId: 'git-credentials',
