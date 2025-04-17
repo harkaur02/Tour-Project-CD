@@ -3,7 +3,7 @@ pipeline {
     environment {
         DOCKERTAG = "${BUILD_NUMBER}"
         GIT_USER_NAME ="harkaur02"
-        GIT_REPO_NAME = "https://github.com/harkaur02/Tour-Project-CD.git"
+        GIT_REPO_NAME = "Tour-Project-CD.git"
     }
     stages {
         stage ('Update Deployment Manifest file') {
